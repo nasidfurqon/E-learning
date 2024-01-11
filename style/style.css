@@ -1,0 +1,42 @@
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    margin:0;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+li:hover{
+    color: aqua;
+}
+.sidebar{
+    border-top: 1px solid black;
+    padding: 25px;
+    position: absolute;
+    background-color: #3B3486;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+}
+/* .sidebar {
+    height: max-content;
+    width: 220px;
+    pos
+    background-color: #3B3486;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000
+} */
+.main {
+    text-align: center;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fafbfe;
+}
