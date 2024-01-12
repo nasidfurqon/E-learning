@@ -1,3 +1,6 @@
+<?php
+$page = isset($_GET['page']) ? $_GET['page'] : '';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,7 +57,22 @@
                 </div>  
         </aside>
         <div class="main">
-            <h1>Hello</h1>
+            <?php
+            switch($page){
+                case 'mapel':
+                    include "page/mapel.php";
+                    break;
+                case 'pengumuman':
+                    include "page/pengumuman.php";
+                    break;
+                case 'tugas';
+                    include "page/tugas.php";
+                    break;
+                default:
+                    include "page/dashboard.php";
+                    break;                
+            }
+            ?>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/01b9b143dd.js" crossorigin="anonymous"></script>
