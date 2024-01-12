@@ -7,42 +7,52 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>E-Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Courgette&family=Dancing+Script&family=Exo+2:ital,wght@1,300&family=Handlee&family=Pangolin&family=Quicksand:wght@500&family=Shadows+Into+Light&family=Sono:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
     <div class="wrapper d-flex">
+        <!-- Sidebar -->
         <aside class="sidebar text-light text-center">
+            <!-- Burger -->
             <div class="d-flex d-none">
                 <button id="toggle-btn" type="button">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
+
+            <!-- Sidebar Menu -->
             <div class="name ms-2 me-2 pt-4 pb-3 border-bottom border-white">
                 <span class="fs-4">E-Learning</span>
             </div>
+
             <ul class="m-3 pt-4 list-group list-unstyled text-start ps-4">
                 <li class="dashboard pb-4">
                     <i class="fa-solid fa-house pe-1 fa-lg"></i>
-                    <a href="#" class="text-light text-decoration-none">Dashboard</a>
+                    <a href="/index.php?page=dashboard" class="text-light text-decoration-none">Dashboard</a>
                 </li>
                 <li class="class pb-4">
                     <i class="fa-solid fa-school pe-1 fa-lg"></i>
-                    <a href="#" class="text-light text-decoration-none">Class</a>
+                    <a href="/index.php?page=class" class="text-light text-decoration-none">Class</a>
                 </li>
                 <li class="material pb-4">
                     <i class="fa-solid fa-book pe-1 fa-lg"></i>
-                    <a href="#" class="text-light text-decoration-none">Material</a>
+                    <a href="/index.php?page=material" class="text-light text-decoration-none">Material</a>
                 </li>
                 <li class="assignment pb-4">
                     <i class="fa-solid fa-bookmark pe-2 fa-lg"></i>
-                    <a href="#" class="text-light text-decoration-none">Assignment</a>
+                    <a href="/index.php?page=assignment" class="text-light text-decoration-none">Assignment</a>
                 </li>
                 <li class="announcement pb-4">
                     <i class="fa-solid fa-inbox pe-1 fa-lg"></i>
-                    <a href="#" class="text-light text-decoration-none">Announcement</a>
+                    <a href="/index.php?page=announcement" class="text-light text-decoration-none">Announcement</a>
                 </li>
             </ul>
+
+            <!-- Sidebar Account -->
            <div class="ms-5 mb-5 account dropdown fixed-bottom">
                     <a href="#" class="d-flex align-items-center text-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="img/Screenshot (360).png" alt="" width="32" height="32" class="rounded-circle me-2 ms-3">
@@ -56,17 +66,22 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                     </ul>
                 </div>  
         </aside>
+
+        <!-- Main Page -->
         <div class="main">
             <?php
             switch($page){
-                case 'mapel':
-                    include "page/mapel.php";
+                case 'material':
+                    include "page/material.php";
                     break;
-                case 'pengumuman':
-                    include "page/pengumuman.php";
+                case 'announcement':
+                    include "page/announcement.php";
                     break;
-                case 'tugas';
-                    include "page/tugas.php";
+                case 'assignment';
+                    include "page/assignment.php";
+                    break;
+                case 'class';
+                    include "page/class.php";
                     break;
                 default:
                     include "page/dashboard.php";
