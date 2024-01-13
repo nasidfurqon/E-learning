@@ -15,7 +15,7 @@
             <p class="card-text">
                 <i class="fa-solid fa-school pe-1 fa-lg"></i>
             </p>
-            <a href="index.php?page=class" style="background-color: #00A9FF;" class="btn text-light mt-2 mb-2">7 Class</a>
+            <a href="index.php?page=class" style="background-color: #00A9FF;" class="btn text-light mt-3 mb-2">7 Class</a>
         </div>
     </div>
     
@@ -25,7 +25,7 @@
             <p class="card-text">
                 <i class="fa-solid fa-bookmark pe-2 fa-lg"></i>
             </p>
-            <a href="/index.php?page=assignment" style="background-color: #00A9FF;" class="btn text-light mt-2 mb-2">3 Assignment</a>
+            <a href="/index.php?page=assignment" style="background-color: #00A9FF;" class="btn text-light mt-3 mb-2">3 Assignment</a>
         </div>
     </div>
     
@@ -35,7 +35,7 @@
             <p class="card-text">
                 <i class="fa-solid fa-inbox pe-1"></i>
             </p>
-            <a href="/index.php?page=announcement" style="background-color: #00A9FF;" class="btn text-light mt-2 mb-2">1 Announcement</a>
+            <a href="/index.php?page=announcement" style="background-color: #00A9FF;" class="btn text-light mt-3 mb-2">1 Announcement</a>
         </div>
     </div>
 

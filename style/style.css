@@ -62,3 +62,27 @@ li:hover{
     color: #0766AD;
     font-size: 4em;
 }
+
+/* Class Style */
+
+.bg {
+    /* opacity: 30%; */
+    height: 150px;
+    background-color: #0766AD;
+}
+
+.list-colon {
+    display: none;
+}
+
+.list{
+    cursor: pointer;
+}
+.change {
+    display:block;
+}
+
+.list-colon-menu:hover {
+    color: #0766AD !important;
+}
+
