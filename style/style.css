@@ -56,7 +56,7 @@ li:hover{
     margin: 15px;
 }
 
-.card-text {
+.icon {
     margin-bottom: 2px;
     margin-top: 20px;
     color: #0766AD;
@@ -86,3 +86,20 @@ li:hover{
     color: #0766AD !important;
 }
 
+.card:hover {
+  box-shadow: 0 0 0 3px #bbe06c;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 1px #7fcbd7;
+}
+
+.hw:hover {
+    color: #0766AD;
+}
+
+
+/* in-class Page */
+.item{
+    color: #0766AD !important;
+}

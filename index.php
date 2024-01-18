@@ -1,5 +1,10 @@
 <?php
 $page = isset($_GET['page']) ? $_GET['page'] : '';
+// include_once "connection.php";
+// session_start();  
+// if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+//   unset($_SESSION['UserId']);
+// }
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,23 +35,23 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
             </div>
 
             <ul class="m-3 pt-4 list-group list-unstyled text-start ps-4">
-                <li class="dashboard pb-4">
+                <li class="dashboard pb-5">
                     <i class="fa-solid fa-house pe-1 fa-lg"></i>
                     <a href="/index.php?page=dashboard" class="text-light text-decoration-none">Dashboard</a>
                 </li>
-                <li class="class pb-4">
+                <li class="class pb-5">
                     <i class="fa-solid fa-school pe-1 fa-lg"></i>
                     <a href="/index.php?page=class" class="text-light text-decoration-none">Class</a>
                 </li>
-                <li class="material pb-4">
+                <li class="material pb-5">
                     <i class="fa-solid fa-book pe-1 fa-lg"></i>
                     <a href="/index.php?page=material" class="text-light text-decoration-none">Material</a>
                 </li>
-                <li class="assignment pb-4">
+                <li class="assignment pb-5">
                     <i class="fa-solid fa-bookmark pe-2 fa-lg"></i>
                     <a href="/index.php?page=assignment" class="text-light text-decoration-none">Assignment</a>
                 </li>
-                <li class="announcement pb-4">
+                <li class="announcement pb-5">
                     <i class="fa-solid fa-inbox pe-1 fa-lg"></i>
                     <a href="/index.php?page=announcement" class="text-light text-decoration-none">Announcement</a>
                 </li>
@@ -83,6 +88,15 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                 case 'class';
                     include "page/class.php";
                     break;
+                case 'in-class';
+                    include "page/in-class.php";
+                    break;
+                // case 'ass-user';
+                //     include "page/ass-user.php";
+                //     break;
+                // case 'mtr-user';
+                //     include "page/mtr-user.php";
+                //     break;    
                 default:
                     include "page/dashboard.php";
                     break;                
@@ -90,6 +104,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
             ?>
         </div>
     </div>
+    <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/01b9b143dd.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
