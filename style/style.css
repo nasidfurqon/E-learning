@@ -103,3 +103,30 @@ li:hover{
 .item{
     color: #0766AD !important;
 }
+
+
+/* ass-user Page */
+.icon-wrap {
+    padding:11px 15px 15px 15px;
+    height: 3em;
+    margin-top: -4px;
+}
+.icon-file {
+    font-size: 1.4em;
+}
+
+.bg-ass {
+    height: 70px;
+    background-color: #F9F9F9;
+}
+.card-title {
+    margin-bottom: 0px !important;
+}
+.updated {
+    margin-top: 3px;
+    font-size: 13px;
+}
+
+.card-wrap {
+    margin: 0px 120px;
+}
