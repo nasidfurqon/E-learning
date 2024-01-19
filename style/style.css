@@ -51,6 +51,7 @@ li:hover{
     text-align: center;
     padding-top: 37px;
     font-size: 30px;
+    color: #0766AD;
 }
 
 .card { 
@@ -156,4 +157,9 @@ li:hover{
 
 .content-detail-ass {
     margin-left: 4.3em;
+}
+
+/* Assignment */
+.title{
+    color: #0766AD;
 }
