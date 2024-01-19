@@ -4,7 +4,7 @@
         <!-- Title -->
         
         <div class="title-detail d-flex mb-3 ">
-            <div class="icon-wrap text-light bg-primary rounded-circle mt-1">
+            <div class="icon-wrap text-light rounded-circle mt-1">
                 <a class="text-decoration-none text-light" href="/index.php?page=in-class">
                     <i class="fa-regular fa-file-lines icon-file"></i>
                 </a>
