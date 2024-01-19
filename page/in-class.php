@@ -8,10 +8,9 @@ $page2 = isset($_GET['page2']) ? $_GET['page2'] : '';
 <!-- Card-Title -->
 <div class="card text-light rounded-start rounded-end mt-4">
   <div class="bg rounded-start rounded-end"></div>
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
+  <div class="card-img-overlay position-absolute mt-4">
+    <h5 class="card-title fs-4 mb-2">Card title</h5>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small>Last updated 3 mins ago</small></p>
   </div>
 </div>
 
@@ -35,7 +34,7 @@ $page2 = isset($_GET['page2']) ? $_GET['page2'] : '';
                 include "page/mtr-user.php";
                 break;    
           default:
-              include "page/mtr-user";
+              include "page/mtr-user.php";
               break;                
       }
       ?>

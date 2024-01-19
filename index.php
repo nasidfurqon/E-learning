@@ -91,12 +91,12 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                 case 'in-class';
                     include "page/in-class.php";
                     break;
-                // case 'ass-user';
-                //     include "page/ass-user.php";
-                //     break;
-                // case 'mtr-user';
-                //     include "page/mtr-user.php";
-                //     break;    
+                case 'detail-ass';
+                    include "page/detail-ass.php";
+                    break;
+                case 'detail-mtr';
+                    include "page/detail-mtr.php";
+                    break;    
                 default:
                     include "page/dashboard.php";
                     break;                

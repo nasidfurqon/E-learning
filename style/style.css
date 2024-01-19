@@ -44,6 +44,7 @@ li:hover{
     min-height: 100vh;
     width: 100%;
     background-color: #fafbfe;
+    padding-bottom: 50px;
 }
 
 .greeting {
@@ -110,6 +111,7 @@ li:hover{
     padding:11px 15px 15px 15px;
     height: 3em;
     margin-top: -4px;
+    background-color: #0766AD;
 }
 .icon-file {
     font-size: 1.4em;
@@ -129,4 +131,25 @@ li:hover{
 
 .card-wrap {
     margin: 0px 120px;
+}
+
+/* Detail Page Style*/
+#title-detail {
+    border-color: #0766AD!important;
+}
+
+.file {
+    width: 100%;
+    height: 30em;
+}
+.content-detail {
+    margin-left: 5em;
+}
+#btn {
+    width: 100%;
+    background-color: #0766AD;
+}
+
+.btn-transparent {
+    color: #0766AD !important;
 }
