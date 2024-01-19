@@ -5,7 +5,9 @@
         
         <div class="title-detail d-flex mb-3 ">
             <div class="icon-wrap text-light bg-primary rounded-circle mt-1">
-                <i class="fa-regular fa-file-lines icon-file"></i>
+                <a class="text-decoration-none text-light" href="/index.php?page=in-class">
+                    <i class="fa-regular fa-file-lines icon-file"></i>
+                </a>
             </div>
             <div class="title-detail border-bottom col-11 ms-4" id="title-detail">
                 <h1>Title</h1>
