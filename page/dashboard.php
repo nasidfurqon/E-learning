@@ -1,13 +1,13 @@
 <div class="head border-dark fs-4 border-bottom">
     <p >Dashboard</p>
 </div>
-<div class="greeting">
+<div class="greeting mt-4">
     <p>Hello, Khoirul!</p>
     <p>Welcome to E-Learning Website</p>
 </div>
 
 <!-- Card  -->
-<div class="card-wrapper justify-content-center mt-5 d-flex">
+<div class="card-wrapper justify-content-center mt-4 d-flex">
 
     <div class="card border-primary-subtle text-center mb-3" style="width: 18rem;">
         <div class="card-body">
