@@ -56,6 +56,7 @@ li:hover{
 
 .card { 
     margin: 15px;
+    border-color: #0766AD !important; 
 }
 
 .icon {
@@ -89,7 +90,7 @@ li:hover{
 }
 
 .card:hover {
-  box-shadow: 0 0 0 3px #bbe06c;
+  box-shadow: 0 0 8px 0 #0766AD;
 }
 
 .btn:hover {
@@ -162,4 +163,11 @@ li:hover{
 /* Assignment */
 .title{
     color: #0766AD;
+}
+
+/* Announce */
+.profile {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -4px;
 }

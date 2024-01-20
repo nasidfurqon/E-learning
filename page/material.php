@@ -3,7 +3,7 @@
     <p >Material</p>
 </div>
 
-<h3 class="text-center pt-4 pb-3 title">Material from all classes</h3>
+<h3 class="text-center pt-4 pb-2 title">Material from all classes</h3>
 
 <!-- Card -->
 

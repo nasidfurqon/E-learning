@@ -6,7 +6,7 @@
   <p>Here are some classes available for you.</p>
 </div>
 
-<!-- Card -->
+<!-- Card --> 
 <div class="row row-cols-1 pt-4 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">
