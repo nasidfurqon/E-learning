@@ -66,6 +66,12 @@ li:hover{
     font-size: 4em;
 }
 
+#btn-dashboard {
+
+    color: #0766AD !important;
+}
+
+
 /* Class Style */
 
 .bg {
@@ -91,6 +97,7 @@ li:hover{
 
 .card:hover {
   box-shadow: 0 0 8px 0 #0766AD;
+  transition: 0.4s;
 }
 
 .btn:hover {
