@@ -79,6 +79,10 @@ li:hover{
 
 
 /* Class Style */
+.name-link:hover {
+    text-decoration: underline !important;
+    color: white;
+}
 
 .bg {
     /* opacity: 30%; */

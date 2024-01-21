@@ -12,7 +12,7 @@
     <div class="card">
       <div class="bg card-img-top text-light d-flex">
         <div class="name p-3">
-          <a href="index.php?page=in-class" class="fs-3 text-light text-decoration-none">Lorem ipsum dolor sit amet.</a>
+          <a href="index.php?page=in-class" class="fs-3 name-link text-light text-decoration-none">Lorem ipsum dolor sit amet.</a>
         </div>
         <div class="list m-3 me-4 mt-4">
           <p onclick="colOnClickMenu()" onmouseenter="colOnMouse(this)" onmouseleave="colOffMouse(this)" class="colon fa-solid fa-ellipsis-vertical text-light fa-xl float-end text-decoration-none mt-3"></p>
