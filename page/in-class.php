@@ -17,10 +17,10 @@ $page2 = isset($_GET['page2']) ? $_GET['page2'] : '';
 <!-- Nav -->
 <ul class="border-dark-subtle nav nav-underline justify-content-center ms-4 me-4 mt-2 border-bottom ">
   <li class="nav-item">
-    <a class="item nav-link" href="index.php?page=in-class&page2=mtr-user">Material</a>
+    <a class="item nav-link <?php if ($page2 == null or $page2 == "mtr-user" ) echo 'active' ?>" href="index.php?page=in-class&page2=mtr-user">Material</a>
   </li>
-  <li style="margin-left: 20%;" class="nav-item">
-    <a class="item nav-link" href="index.php?page=in-class&page2=ass-user">Assignment</a>
+  <li style="margin-left: 20%;" class="nav-item ">
+    <a class="item nav-link <?php if ($page2 == "ass-user" ) echo 'active' ?>" href="index.php?page=in-class&page2=ass-user">Assignment</a>
   </li>
 </ul>
 

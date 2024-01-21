@@ -4,14 +4,20 @@
     margin: 0;
     padding: 0;
 }
+
+.active-page {
+    color: aqua !important;
+}
+
 .wrapper {
     margin:0;
     position: relative;
     height: 100%;
     overflow: hidden;
 }
+
 li:hover{
-    color: aqua;
+    color: aqua !important;
 }
 .sidebar{
     overflow-x: hidden;
@@ -102,12 +108,12 @@ li:hover{
 
 .btn:hover {
   box-shadow: 0 0 0 1px #7fcbd7;
+  
 }
 
 .hw:hover {
     color: #0766AD;
 }
-
 
 /* in-class Page */
 .item{

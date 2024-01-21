@@ -34,24 +34,24 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                 <span class="fs-4">E-Learning</span>
             </div>
 
-            <ul class="m-3 pt-4 list-group list-unstyled text-start ps-4">
-                <li class="dashboard pb-5">
+            <ul class="m-3 sidebar-content pt-4 list-group list-unstyled text-start ps-4">
+                <li class="dashboard <?php if ($page == null or $page == "dashboard") echo 'active-page' ?> pb-5">
                     <i class="fa-solid fa-house pe-1 fa-lg"></i>
                     <a href="/index.php?page=dashboard" class="text-light text-decoration-none">Dashboard</a>
                 </li>
-                <li class="class pb-5">
+                <li class="class <?php if ($page == "class" or $page=="in-class") echo 'active-page' ?> pb-5">
                     <i class="fa-solid fa-school pe-1 fa-lg"></i>
                     <a href="/index.php?page=class" class="text-light text-decoration-none">Class</a>
                 </li>
-                <li class="material pb-5">
+                <li class="material <?php if ($page == "material" ) echo 'active-page' ?> pb-5">
                     <i class="fa-solid fa-book pe-1 fa-lg"></i>
                     <a href="/index.php?page=material" class="text-light text-decoration-none">Material</a>
                 </li>
-                <li class="assignment pb-5">
+                <li class="assignment <?php if ($page == "assignment" ) echo 'active-page' ?> pb-5">
                     <i class="fa-solid fa-bookmark pe-2 fa-lg"></i>
                     <a href="/index.php?page=assignment" class="text-light text-decoration-none">Assignment</a>
                 </li>
-                <li class="announcement pb-5">
+                <li class="announcement <?php if ($page == "announcement" ) echo 'active-page' ?> pb-5">
                     <i class="fa-solid fa-inbox pe-1 fa-lg"></i>
                     <a href="/index.php?page=announcement" class="text-light text-decoration-none">Announcement</a>
                 </li>
@@ -99,9 +99,11 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                     break;    
                 default:
                     include "page/dashboard.php";
-                    break;                
-            }
-            ?>
+                    break;
+                }
+
+                ?>
+                
         </div>
     </div>
     <script src="js/script.js"></script>
