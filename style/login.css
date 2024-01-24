@@ -1,0 +1,31 @@
+body, html {
+    height: 100%;
+}
+.container-fluid {
+    height: 100%;
+    background-size: cover;
+    background-image: linear-gradient(#8b82e7,#6631c2);
+}
+
+.form-control, .card {
+    border-radius: 15px !important;
+}
+
+.form-control {
+    width: 100% !important;
+    padding-right: 2.6rem;
+}
+
+.icon {
+    color: #6631c2;
+    padding: 10px;
+    z-index: 1;
+    margin-left: 12.2rem;
+
+}
+
+.btn-login {
+    color: black;
+    font-size: 13px;
+    padding: 10px;
+}
