@@ -1,3 +1,25 @@
+<?php
+include_once "../connection.php";
+if(isset($_POST['submit'])){ 
+    $conn = connect();
+    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
+    $stmt->execute([$_POST['email']]);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch();
+    if ($user){
+        if(password_verify($_POST['password'], $user['password'])){
+            $_SESSION['UserId'] = $user['id'];
+            header('Location: /index.php?page=dashboard');
+        }
+        else{
+            echo "tes";
+        }
+    }   
+    else{
+        echo "tes";
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +35,7 @@
         <div class="card bg-transparent border-white position-absolute top-50 start-50 translate-middle" style="width: 18rem; height: 20.3rem;">
             <div class="card-body">
                 <h5 class="card-title text-center pb-3 pt-3 text-white fw-bold fs-2">Login</h5>
-                <form action="page/login.php" method="post" enctype="multipart/form-data" class="p-2">
+                <form action="login.php" method="post" enctype="multipart/form-data" class="p-2">
                     <div class="form-group mb-4 ">    
                         <span class="fa-solid fa-envelope position-absolute icon"></span>
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email">
