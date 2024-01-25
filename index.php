@@ -1,11 +1,12 @@
 <?php
 $page = isset($_GET['page']) ? $_GET['page'] : '';
-// include_once "connection.php";
-// session_start();  
-// if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-//   unset($_SESSION['UserId']);
-// }
+include_once "connection.php";
+session_start();
+if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+    unset($_SESSION['UserId']);
+}
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,12 +15,15 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
     <title>E-Learning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Courgette&family=Dancing+Script&family=Exo+2:ital,wght@1,300&family=Handlee&family=Pangolin&family=Quicksand:wght@500&family=Shadows+Into+Light&family=Sono:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Courgette&family=Dancing+Script&family=Exo+2:ital,wght@1,300&family=Handlee&family=Pangolin&family=Quicksand:wght@500&family=Shadows+Into+Light&family=Sono:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/login.css">
+
   </head>
   <body>
-    <div class="wrapper d-flex">
+    <div class="wrapper <?php if(isset($_SESSION['UserId'])) echo "d-flex"?>">
+        <?php if(isset($_SESSION['UserId'])): ?>
         <!-- Sidebar -->
         <aside class="sidebar text-light text-center">
             <!-- Burger -->
@@ -67,13 +71,17 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="/index.php?action=logout">Sign out</a></li>
                     </ul>
                 </div>  
         </aside>
-
+        <!-- 
+        else :
+            
+                 -->
+        <?php endif; ?>
         <!-- Main Page -->
-        <div class="main">
+        <div class="<?php if(isset($_SESSION['UserId'])) echo 'main' ?>">
             <?php
             switch($page){
                 case 'material':
@@ -96,9 +104,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                     break;
                 case 'detail-mtr';
                     include "page/detail-mtr.php";
-                    break;    
+                    break;
                 default:
-                    include "page/dashboard.php";
+                    if(isset($_SESSION['UserId'])){
+                        include "page/dashboard.php";
+                    }
+                    else{
+                        include "page/login.php";
+                    }
                     break;
                 }
 

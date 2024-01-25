@@ -27,20 +27,20 @@ include_once "../connection.php";
                 <h5 class="card-title text-center pb-3 pt-3 text-white fw-bold fs-2">Register</h5>
                 <form action="register.php" method="post" enctype="multipart/form-data" class="p-2">
                     <div class="form-group mb-4 ">    
-                        <span class="fa-solid fa-envelope position-absolute icon"></span>
+                        <span class="fa-solid fa-envelope position-absolute icon-login"></span>
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group mb-4 ">    
-                        <span class="fa-solid fa-user    position-absolute icon"></span>
+                        <span class="fa-solid fa-user position-absolute icon-login"></span>
                         <input type="text" name="username" id="username" class="form-control" placeholder="Username">
                     </div>
                     <div class="form-group mb-4">
-                        <span class="fa-solid fa-lock position-absolute icon"></span>
+                        <span class="fa-solid fa-lock position-absolute icon-login"></span>
                         <input type="text" name="password" id="password" class="form-control" placeholder="Password">
                     </div> 
                     <input type="submit" name="submit" value="Register" class="btn-login btn bg-white form-control fw-bold mb-1" style="width: 100%;">
                 </form>
-                <small class="text-white back-login">Back to <a href="login.php" class="text-white text-decoration-none">Login</a></small>
+                <small class="text-white back-login">Back to <a href="/index.php?page=login" class="text-white text-decoration-none">Login</a></small>
             </div>
         </div>
     </div>
