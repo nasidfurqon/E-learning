@@ -1,25 +1,3 @@
-<?php
-include_once "../connection.php";
-if(isset($_POST['submit'])){ 
-    $conn = connect();
-    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
-    $stmt->execute([$_POST['email']]);
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $user = $stmt->fetch();
-    if ($user){
-        if(password_verify($_POST['password'], $user['password'])){
-            $_SESSION['UserId'] = $user['id'];
-            header('Location: /index.php?page=dashboard');
-        }
-        else{
-            echo "tes";
-        }
-    }   
-    else{
-        echo "tes";
-    }
-}
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,8 +8,46 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="/style/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Courgette&family=Dancing+Script&family=Exo+2:ital,wght@1,300&family=Handlee&family=Pangolin&family=Quicksand:wght@500&family=Shadows+Into+Light&family=Sono:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 </head>
-  <body>
-    <div class="container-fluid">
+<body>
+  <div class="container-fluid">
+
+<!-- PHP CONNECTION TO DATABASE -->
+<?php
+include_once "../connection.php";
+if(isset($_POST['submit'])) :
+    $conn = connect();
+    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
+    $stmt->execute([$_POST['email']]);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch();
+    if ($user):
+        if(password_verify($_POST['password'], $user['password'])):
+            $_SESSION['UserId'] = $user['id'];
+            header('Location: /index.php?page=dashboard');
+        
+        // triggered when wrong password
+        else : ?>
+            <div class="alert position-absolute start-50  translate-middle bg-danger text-white border-danger bottom-0" style="width: 19rem;">
+            <div class="alert-content d-flex top-0 position-absolute pt-1">
+                <i class="pt-1 fa-solid fa-circle-exclamation"></i>
+                <p class="ms-2">please enter the correct password !</p>
+            </div>
+            </div>
+        <?php endif;
+        
+    //  triggered when wrong email 
+    else : ?>
+        <div class="alert position-absolute start-50  translate-middle bg-danger text-white border-danger bottom-0" style="width: 24rem;">
+            <div class="alert-content d-flex top-0 position-absolute pt-1">
+                <i class="pt-1 fa-solid fa-circle-exclamation"></i>
+                <p class="ms-2">please enter the correct email and password !</p>
+            </div>
+            </div>
+    <?php endif;
+endif;
+?>
+<!-- END PHP CONNECTION -->
+
         <div class="card bg-transparent border-white position-absolute top-50 start-50 translate-middle" style="width: 18rem; height: 20.3rem;">
             <div class="card-body">
                 <h5 class="card-title text-center pb-3 pt-3 text-white fw-bold fs-2">Login</h5>
