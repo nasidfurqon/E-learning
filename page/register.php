@@ -1,3 +1,15 @@
+<?php
+include_once "../connection.php";
+// session_start(); 
+
+    if(isset($_POST['submit'])) {
+        $conn = connect();
+        $password = $_POST['password'];
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO user (email, password, name) VALUES (?, ?, ?)");
+        $stmt->execute([$_POST['email'], $hashed_password, $_POST['username']]);
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +25,7 @@
         <div class="card bg-transparent border-white position-absolute top-50 start-50 translate-middle" style="width: 18rem; height: 23.9rem;">
             <div class="card-body">
                 <h5 class="card-title text-center pb-3 pt-3 text-white fw-bold fs-2">Register</h5>
-                <form action="page/login.php" method="post" enctype="multipart/form-data" class="p-2">
+                <form action="register.php" method="post" enctype="multipart/form-data" class="p-2">
                     <div class="form-group mb-4 ">    
                         <span class="fa-solid fa-envelope position-absolute icon"></span>
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email">
