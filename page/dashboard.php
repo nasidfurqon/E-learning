@@ -1,3 +1,11 @@
+<?php
+$id = isset($_GET['userId']) ? $_GET['userId'] : '';
+$conn = connect();
+$stmt = $conn->prepare("SELECT SUM(value) as sum FROM class WHERE userId = ?");
+$stmt->execute([$id]);
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+$class = $stmt->fetch();
+?>
 <div class="head border-dark fs-4 border-bottom">
     <p >Dashboard</p>
 </div>
@@ -15,7 +23,8 @@
             <p class="card-text icon">
                 <i class="fa-solid fa-school pe-1 fa-lg"></i>
             </p>
-            <a href="index.php?page=class" id="btn-dashboard" class="btn border-primary-subtle bg-transparent mt-3 mb-2">7 Class</a>
+            <a href="index.php?page=class" id="btn-dashboard" class="btn border-primary-subtle bg-transparent mt-3 mb-2">
+                <?php echo $class['sum'] ?> Class</a>
         </div>
     </div>
     

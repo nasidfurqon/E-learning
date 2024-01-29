@@ -11,7 +11,7 @@
         if ($user):
             if(password_verify($_POST['password'], $user['password'])):
                 $_SESSION['UserId'] = $user['id'];
-                header('Location: /index.php?page=dashboard');
+                header("Location: /index.php?page=dashboard&userId={$user['id']}");
             
             // triggered when wrong password
             else : ?>

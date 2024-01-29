@@ -15,7 +15,7 @@ body, html {
     margin-bottom: 7rem;
 }
 
-.form-control, .card {
+.form-control{
     border-radius: 15px !important;
 }
 
