@@ -78,6 +78,14 @@ li:hover{
 
 
 /* Class Style */
+.w-nothing {
+    text-align: center;
+    margin-left: 7rem;
+    /* padding-top: 37px; */
+    font-size: 40px;
+    color: #0766AD;
+}
+
 .name-link:hover {
     text-decoration: underline !important;
     color: white;
@@ -89,9 +97,10 @@ li:hover{
     background-color: #0766AD;
 }
 
-.list-colon {
+.list-colon, .list-colon2 {
     display: none;
 }
+
 
 .list{
     cursor: pointer;
