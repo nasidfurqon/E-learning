@@ -123,6 +123,10 @@ li:hover{
   
 }
 
+#card-b-2 {
+    padding-bottom :1.3rem;
+}
+
 .hw:hover {
     color: #0766AD;
 }

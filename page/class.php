@@ -10,6 +10,7 @@ $stmt2->execute([$id]);
 $stmt2->setFetchMode(PDO::FETCH_ASSOC);
 $idclass = $stmt2->fetch();
 
+
 ?>
 
 <div class="head border-dark fs-4 border-bottom">
@@ -28,6 +29,19 @@ $idclass = $stmt2->fetch();
 <div class="row row-cols-1 pt-2 row-cols-md-3 g-4">
 <?php
 foreach($classes as $class):
+
+  // condition database for assignments
+$classid = $class['id'];
+$stmt3 = $conn->prepare("SELECT * FROM assignment WHERE classid = ?");
+$stmt3->execute([$classid]);
+$stmt3->setFetchMode(PDO::FETCH_ASSOC);
+$assignment = $stmt3->fetch();
+
+// check count of row
+$stmt5 = $conn->prepare("SELECT COUNT(*) AS count FROM assignment WHERE classid =  ?");
+$stmt5->execute([$classid]);
+$stmt5->setFetchMode(PDO::FETCH_ASSOC);
+$count = $stmt5->fetch();
 ?>
   <div class="col">
     <div class="card">
@@ -35,20 +49,24 @@ foreach($classes as $class):
         <div class="name p-3 ">
           <a href="index.php?page=in-class&userId=<?php echo $id ?>" class="fs-3 name-link text-light text-decoration-none"><?php echo $class['name'] ?></a>
         </div>
-        <!-- <div class="list mt-3 col d-flex">
-          <p onclick="colOnClickMenu()" class="colon fa-solid fa-ellipsis-vertical text-light fa-xl float-end text-decoration-none me-2  mt-3"></p>
-          <div class="list-colon bg-white p-2 border border-2 rounded-start rounded-end" id="list-colon" style="height:4rem">
-            <a href="#" class="list-colon-menu text-decoration-none text-dark">Edit</a>
-            <a href="#" class="list-colon-menu text-decoration-none text-dark">Delete</a>
-          </div>
-        </div> -->
       </div>
+      <?php      
+      if($count['count'] != 0) :?>
       <div class="card-body">
-        <p >Tenggat</p>
-        <a href="/index.php?page=assignment&userId=<?php echo $id ?>" class="hw card-title fs-3 text-decoration-none">Homework</a>
+        <p ><?php echo $assignment['tenggat'] ?></p>
+        <a href="/index.php?page=assignment&userId=<?php echo $id ?>" class="hw card-title fs-3 text-decoration-none"><?php echo $assignment['name'];
+        echo $count['count'] ?></a>
+        
+        <p class="card-text"></p> 
+      </div>
+      <?php else: ?>
+        <div class="card-body" id="card-b-2">
+        <p ></p>
+        <a class="hw card-title fs-5 text-decoration-none">yuhuu you dont have an assignment</a>
         <p class="card-text"></p>
       </div>
-    </div>
+      <?php endif;?>
+    </div>  
   </div>
   <?php endforeach;?>
 </div>
