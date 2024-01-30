@@ -138,6 +138,14 @@ li:hover{
 
 
 /* ass-user Page */
+.ass-nothing {
+    text-align: center;
+    margin-left: 7rem;
+    margin-top: 9rem;
+    font-size: 30px;
+    color: #0766AD;
+}
+
 .icon-wrap {
     padding:11px 15px 15px 15px;
     height: 3em;
