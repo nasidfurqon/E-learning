@@ -47,13 +47,15 @@ $count = $stmt5->fetch();
     <div class="card">
       <div class="bg card-img-top text-light d-flex">
         <div class="name p-3 ">
-          <a href="index.php?page=in-class&userId=<?php echo $id ?>" class="fs-3 name-link text-light text-decoration-none"><?php echo $class['name'] ?></a>
+          <!-- TITLE OF CLASS -->
+          <a href="index.php?page=in-class&userId=<?php echo $id ?>&classId=<?php echo $classid ?>" class="fs-3 name-link text-light text-decoration-none"><?php echo $class['name'] ?></a>
         </div>
       </div>
       <?php      
       if($count['count'] != 0) :?>
       <div class="card-body">
         <p ><?php echo $assignment['tenggat'] ?></p>
+        <!-- TITLE OF ASSIGNMENTS -->
         <a href="/index.php?page=assignment&userId=<?php echo $id ?>" class="hw card-title fs-3 text-decoration-none"><?php echo $assignment['name'];
         echo $count['count'] ?></a>
         
