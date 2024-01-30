@@ -64,7 +64,7 @@ $count = $stmt5->fetch();
       <?php else: ?>
         <div class="card-body" id="card-b-2">
         <p ></p>
-        <a class="hw card-title fs-5 text-decoration-none">yuhuu you dont have an assignment</a>
+        <a class="hw card-title fs-5 text-decoration-none">Yuhuu, you dont have an assignment!</a>
         <p class="card-text"></p>
       </div>
       <?php endif;?>
