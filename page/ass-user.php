@@ -28,7 +28,7 @@ foreach($assignments as $assignment):
                 <i class="fa-solid fa-question icon-file "></i>
             </div>
             <div class="title">
-                <h5 class="card-title fs-6"><a href="/index.php?page=detail-ass" class="text-decoration-none text-black">User memposting tugas baru: <?php echo $assignment['name']; ?>
+                <h5 class="card-title fs-6"><a href="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id']?>" class="text-decoration-none text-black">User memposting tugas baru: <?php echo $assignment['name']; ?>
                 </a> </h5>
                 <p class="updated card-text text-black-50">Last updated 
                 <?php
