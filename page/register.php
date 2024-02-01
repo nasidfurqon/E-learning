@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="/style/login.css">
+    
+</head>
 <?php
 include_once "../connection.php";
 // session_start(); 
@@ -22,7 +26,7 @@ include_once "../connection.php";
 </head>
   <body>
     <div class="container-fluid">
-        <div class="card bg-transparent border-white position-absolute top-50 start-50 translate-middle" style="width: 18rem; height: 23.9rem;">
+        <div class="card bg-transparent border-white position-absolute top-50 start-50 translate-middle" style="width: 18rem; height: 25rem;">
             <div class="card-body">
                 <h5 class="card-title text-center pb-3 pt-3 text-white fw-bold fs-2">Register</h5>
                 <form action="register.php" method="post" enctype="multipart/form-data" class="p-2">
