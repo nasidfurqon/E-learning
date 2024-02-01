@@ -28,7 +28,7 @@ foreach($materials as $material):
                 <i class="fa-regular fa-file-lines icon-file "></i>
             </div>
             <div class="title">
-                <h5 class="card-title fs-6"><a href="/index.php?page=detail-mtr" class="text-decoration-none text-black">User memposting materi baru:  <?php echo $material['name']; ?></a></h5>
+                <h5 class="card-title fs-6"><a href="/index.php?page=detail-mtr&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&mtrId=<?php echo $material['id']?>" class="text-decoration-none text-black">User memposting materi baru:  <?php echo $material['name']; ?></a></h5>
                 <p class="updated card-text text-black-50">Last updated 
                     <?php
                     
