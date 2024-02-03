@@ -11,6 +11,8 @@ $stmtuser = $conn->prepare("SELECT * FROM user WHERE id = ?");
 $stmtuser->execute([$id]);
 $stmtuser->setFetchMode(PDO::FETCH_ASSOC);
 $user = $stmtuser->fetch();
+
+$file = $_POST['file-input'];
 ?>
 
 
@@ -56,7 +58,12 @@ $user = $stmtuser->fetch();
 
                 <!-- Button -->
                 <div class="btn-wrapper">
-                    <a href="#" class="btn btn-transparent bg-transparent btn-primary position-relative mt-5" id="btn">+ Add Answer</a>
+                    <div class="input-file mt-5">
+                        <form action="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id'] ?>"></form>
+                        <input type="file" name="file-input" class="position-absolute" style="width: 19rem;" id="file-input">
+
+                        <label class="btn d-inline-block btn-transparent bg-transparent btn-primary" for="file-input" id="btn">+ Add Answer <?php echo $file ?></label>
+                    </div>
                     <a href="#" class="btn text-light position-relative mt-3" id="btn">Marks as Done</a>
                 </div>
             </div>
