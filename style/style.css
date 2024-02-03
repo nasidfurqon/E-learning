@@ -199,6 +199,11 @@ input[type="file"] {
   margin-left: 4.3em;
 }
 
+#file-name {
+  margin: auto !important;
+  text-align: center !important;
+}
+
 /* Assignment */
 .title {
   color: #0766ad;

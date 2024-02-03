@@ -57,14 +57,19 @@ $file = $_POST['file-input'];
                 </div>
 
                 <!-- Button -->
-                <div class="btn-wrapper">
-                    <div class="input-file mt-5">
-                        <form action="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id'] ?>"></form>
-                        <input type="file" name="file-input" class="position-absolute" style="width: 19rem;" id="file-input">
+                <div class="btn-wrapper mt-5">
+                    <center>
+                        <a class="text-dark position-relative" id="file-name" href="/file/Khoirul Nasid Furqon - CV (2).pdf" download></a>
+                    </center>
 
-                        <label class="btn d-inline-block btn-transparent bg-transparent btn-primary" for="file-input" id="btn">+ Add Answer <?php echo $file ?></label>
-                    </div>
-                    <a href="#" class="btn text-light position-relative mt-3" id="btn">Marks as Done</a>
+                        <form class="pt-2" action="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id'] ?>">
+                            <div class="input-file">
+                            <input type="file" name="file-input" class="position-absolute" style="width: 19rem;" id="file-input">
+                            
+                            <label class="btn d-inline-block btn-transparent bg-transparent btn-primary" for="file-input" id="btn">+ Add Answer <?php echo $file ?></label>
+                        </div>
+                        <a href="#" class="btn text-light position-relative mt-3" id="btn">Marks as Done</a>
+                    </form>
                 </div>
             </div>
         </div>
