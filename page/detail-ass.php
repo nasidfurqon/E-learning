@@ -23,7 +23,11 @@ if(isset($_POST['submit'])) {
     $stmt = $conn->prepare("UPDATE answer SET answer = ? WHERE id = ?");
     $stmt->execute([$filename, $idAnswer]);
 }
-// $stmt2 = $conn->prepare("SELECT * FROM ")
+
+$stmt2 = $conn->prepare("SELECT * FROM answer WHERE userid = ? AND classid = ?");
+$stmt2->execute([$id, $classid]);
+$stmt2->setFetchMode(PDO::FETCH_ASSOC);
+$answers = $stmt2->fetchAll();
 ?>  
 
 
@@ -68,12 +72,14 @@ if(isset($_POST['submit'])) {
                 </div>
 
                 <!-- Button -->
-                <div class="btn-wrapper mt-5">
+                <div class="btn-wrapper mt-4">
                     <center>
                         <ul>
-                            <li id="file-name" class="text-decoration-none list-unstyled">
-                                <a class="text-dark position-relative" id="" href="/file/Khoirul Nasid Furqon - CV (2).pdf" download></a>
+                            <?php foreach($answers as $answer): ?>
+                            <li id="file-name" class="text-decoration-none list-unstyled pt-2">
+                                <a class="text-dark position-relative" href="<?php echo $answer['answer'] ?>" download><?php echo $answer['answer'] ?></a>
                             </li>
+                            <?php endforeach; ?>
                         </ul>
                     </center>
 
