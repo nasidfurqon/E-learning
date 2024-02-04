@@ -12,8 +12,19 @@ $stmtuser->execute([$id]);
 $stmtuser->setFetchMode(PDO::FETCH_ASSOC);
 $user = $stmtuser->fetch();
 
-$file = $_POST['file-input'];
-?>
+if(isset($_POST['submit'])) {    
+    $stmtanswer = $conn->prepare("INSERT INTO answer (userid, classid) VALUES(?, ?)");
+    $stmtanswer->execute([$id, $classid]);
+
+    $idAnswer = $conn->lastInsertId();
+    $ext = pathinfo($_FILES['file-input']['name'], PATHINFO_EXTENSION);
+    $filename = "answer/{$_FILES['file-input']['name']}";
+    move_uploaded_file($_FILES['file-input']['tmp_name'], $filename);
+    $stmt = $conn->prepare("UPDATE answer SET answer = ? WHERE id = ?");
+    $stmt->execute([$filename, $idAnswer]);
+}
+// $stmt2 = $conn->prepare("SELECT * FROM ")
+?>  
 
 
 <div class="row wrapper-detail">
@@ -59,16 +70,20 @@ $file = $_POST['file-input'];
                 <!-- Button -->
                 <div class="btn-wrapper mt-5">
                     <center>
-                        <a class="text-dark position-relative" id="file-name" href="/file/Khoirul Nasid Furqon - CV (2).pdf" download></a>
+                        <ul>
+                            <li id="file-name" class="text-decoration-none list-unstyled">
+                                <a class="text-dark position-relative" id="" href="/file/Khoirul Nasid Furqon - CV (2).pdf" download></a>
+                            </li>
+                        </ul>
                     </center>
 
-                        <form class="pt-2" action="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id'] ?>">
+                    <form class="pt-2" action="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id'] ?>" method="post" enctype="multipart/form-data">
                             <div class="input-file">
-                            <input type="file" name="file-input" class="position-absolute" style="width: 19rem;" id="file-input">
+                            <input type="file" name="file-input" class="position-absolute" style="width: 19rem;" id="file-input" multiple>
                             
                             <label class="btn d-inline-block btn-transparent bg-transparent btn-primary" for="file-input" id="btn">+ Add Answer <?php echo $file ?></label>
                         </div>
-                        <a href="#" class="btn text-light position-relative mt-3" id="btn">Marks as Done</a>
+                        <input type="submit" value="Marks as Done" class="btn text-light position-relative mt-3" name="submit" id="btn">
                     </form>
                 </div>
             </div>
