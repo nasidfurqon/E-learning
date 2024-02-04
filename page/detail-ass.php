@@ -1,5 +1,6 @@
 <?php
 $conn = connect();
+$assid = isset($_GET['assId']) ? $_GET['assId'] : '';
 $classid = isset($_GET['classId']) ? $_GET['classId'] : '';
 $assid = isset($_GET['assId']) ? $_GET['assId'] : '';
 $stmt = $conn->prepare("SELECT * FROM assignment WHERE id = ?");
@@ -13,23 +14,22 @@ $stmtuser->setFetchMode(PDO::FETCH_ASSOC);
 $user = $stmtuser->fetch();
 
 if(isset($_POST['submit'])) {    
-    $stmtanswer = $conn->prepare("INSERT INTO answer (userid, classid) VALUES(?, ?)");
-    $stmtanswer->execute([$id, $classid]);
+    $stmtanswer = $conn->prepare("INSERT INTO answer (userid,assid) VALUES(?, ?)");
+    $stmtanswer->execute([$id, $assid]);
 
     $idAnswer = $conn->lastInsertId();
     $ext = pathinfo($_FILES['file-input']['name'], PATHINFO_EXTENSION);
-    $filename = "answer/{$_FILES['file-input']['name']}";
+    $filename = "answer/$id-{$_FILES['file-input']['name']}";
     move_uploaded_file($_FILES['file-input']['tmp_name'], $filename);
     $stmt = $conn->prepare("UPDATE answer SET answer = ? WHERE id = ?");
     $stmt->execute([$filename, $idAnswer]);
 }
 
-$stmt2 = $conn->prepare("SELECT * FROM answer WHERE userid = ? AND classid = ?");
-$stmt2->execute([$id, $classid]);
+$stmt2 = $conn->prepare("SELECT * FROM answer WHERE userid = ? AND assid = ?");
+$stmt2->execute([$id, $assid]);
 $stmt2->setFetchMode(PDO::FETCH_ASSOC);
 $answers = $stmt2->fetchAll();
 ?>  
-
 
 <div class="row wrapper-detail">
     <!-- left Side -->
@@ -72,11 +72,14 @@ $answers = $stmt2->fetchAll();
                 </div>
 
                 <!-- Button -->
-                <div class="btn-wrapper mt-4">
+                <div class="btn-wrapper mt-5">
                     <center>
                         <ul>
-                            <?php foreach($answers as $answer): ?>
                             <li id="file-name" class="text-decoration-none list-unstyled pt-2">
+                                <a class="text-dark position-relative" href="" download></a>
+                            </li>
+                            <?php foreach($answers as $answer): ?>
+                            <li id="file-name2" class="text-decoration-none list-unstyled pt-2">
                                 <a class="text-dark position-relative" href="<?php echo $answer['answer'] ?>" download><?php echo $answer['answer'] ?></a>
                             </li>
                             <?php endforeach; ?>
