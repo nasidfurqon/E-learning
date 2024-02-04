@@ -20,6 +20,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Courgette&family=Dancing+Script&family=Exo+2:ital,wght@1,300&family=Handlee&family=Pangolin&family=Quicksand:wght@500&family=Shadows+Into+Light&family=Sono:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <script>
+        if(window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
   </head>
   <body>
     <div class="wrapper <?php if(isset($_SESSION['UserId'])) echo "d-flex"?>">
