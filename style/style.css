@@ -204,6 +204,9 @@ input[type="file"] {
   text-align: center !important;
 }
 
+#file-name:hover {
+  color: black !important;
+}
 /* Assignment */
 .title {
   color: #0766ad;

@@ -74,12 +74,12 @@ $answers = $stmt2->fetchAll();
                 <!-- Button -->
                 <div class="btn-wrapper mt-5">
                     <center>
-                        <ul>
-                            <li id="file-name" class="text-decoration-none list-unstyled pt-2">
+                        <ul style="list-style-type: circle;">
+                            <li id="file-name" class="text-decoration-none pt-2 list-unstyled">
                                 <a class="text-dark position-relative" href="" download></a>
                             </li>
                             <?php foreach($answers as $answer): ?>
-                            <li id="file-name2" class="text-decoration-none list-unstyled pt-2">
+                            <li id="file-name2" class="text-decoration-none pt-2">
                                 <a class="text-dark position-relative" href="<?php echo $answer['answer'] ?>" download><?php echo $answer['answer'] ?></a>
                             </li>
                             <?php endforeach; ?>
