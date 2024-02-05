@@ -29,6 +29,8 @@ $stmt2 = $conn->prepare("SELECT * FROM answer WHERE userid = ? AND assid = ?");
 $stmt2->execute([$id, $assid]);
 $stmt2->setFetchMode(PDO::FETCH_ASSOC);
 $answers = $stmt2->fetchAll();
+
+
 ?>  
 
 <div class="row wrapper-detail">
@@ -78,13 +80,33 @@ $answers = $stmt2->fetchAll();
                             <li id="file-name" class="text-decoration-none pt-2 list-unstyled">
                                 <a class="text-dark position-relative" href="" download></a>
                             </li>
-                            <?php foreach($answers as $answer): ?>
+                            <?php foreach($answers as $answer): 
+                                // $answerId = isset($_GET['answerId']) ? $_GET['answerId'] : ''; 
+                                // if(isset($_POST['delete'])){
+                                //     $stmt3 = $conn->prepare("DELETE FROM answer WHERE id = ?");
+                                //     $stmt3->execute([$answer['id']]);
+                                //     header("Location : /index.php?page=detail-ass&userId={$id}&classId={$classid }&assId={$assignment['id']}");
+                                // }
+                                ?>
+                                
                             <li id="file-name2" class="text-decoration-none pt-2">
-                                <a class="text-dark position-relative" href="<?php echo $answer['answer'] ?>" download><?php echo $answer['answer'] ?></a>
+                                <a class="text-dark position-relative" href="<?php echo $answer['answer'] ?>" download><?php echo $answer['answer'] ?>
+                                <!-- <form action="/index.php?page=detail-ass&userId=<?php //echo $id ?>&classId=<?php //echo $classid ?>&assId=<?php //echo $assignment['id'] ?>" method="post">
+                                    <input type="submit" name="delete" class="fa-solid fa-xmark ps-1 text-black text-decoration-none" id="delete-answer"></input>
+                                </form> -->
+                            </a>
                             </li>
                             <?php endforeach; ?>
                         </ul>
                     </center>
+
+                    <?php 
+                    $stmt4 = $conn->prepare("SELECT SUM(value) AS count FROM answer WHERE userid = ? AND assid = ?");
+                    $stmt4->execute([$id, $assid]);
+                    $stmt4->setFetchMode(PDO::FETCH_ASSOC);
+                    $count = $stmt4->fetch();
+                    if($count['count'] < 0):
+                    ?>
 
                     <form class="pt-2" action="/index.php?page=detail-ass&userId=<?php echo $id ?>&classId=<?php echo $classid ?>&assId=<?php echo $assignment['id'] ?>" method="post" enctype="multipart/form-data">
                             <div class="input-file">
@@ -94,6 +116,9 @@ $answers = $stmt2->fetchAll();
                         </div>
                         <input type="submit" value="Marks as Done" class="btn text-light position-relative mt-3" name="submit" id="btn">
                     </form>
+                    <?php else: ?>
+                    <p style="cursor: context-menu !important;" class="btn text-light position-relative mt-3" id="btn">the answer has been sent</p>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
