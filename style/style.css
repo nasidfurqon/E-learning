@@ -245,3 +245,7 @@ input[type="file"] {
   padding-top: 20px;
   width: 500px;
 }
+
+.alert {
+  margin-top: 50px !important;
+}

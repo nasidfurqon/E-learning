@@ -31,3 +31,8 @@ $user = $stmt->fetch();
         </div>
     </div>
 </div>
+
+<!-- ALERT -->
+<div class="alert alert-info" role="alert">
+  Check your data correctly. If there are any wrong, please change <a href="/index.php?page=change-profile&userId=<?php echo $id ?>">here!</a>
+</div>
