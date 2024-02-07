@@ -112,6 +112,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                 case 'profile':
                     include "page/profil.php";
                     break;
+                case 'change-profile':
+                    include "page/change-profile.php";
+                    break;
                 default:
                     if(isset($_SESSION['UserId'])){
                         include "page/dashboard.php";
