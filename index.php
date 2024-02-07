@@ -22,7 +22,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
 
     <script>
         if(window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
+            window.history.replaceState(null, null, window.location.href);  
         }
     </script>
   </head>
@@ -73,8 +73,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                         <strong class="text-light">khoirul</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="/index.php?page=profile&userId=<?php echo $id ?>">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/index.php?action=logout">Sign out</a></li>
                     </ul>
@@ -109,6 +108,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                     break;
                 case 'detail-mtr';
                     include "page/detail-mtr.php";
+                    break;
+                case 'profile':
+                    include "page/profil.php";
                     break;
                 default:
                     if(isset($_SESSION['UserId'])){
