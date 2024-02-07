@@ -237,10 +237,11 @@ input[type="file"] {
 }
 .biodata {
   margin-left: 140px;
-  margin-top: 5 0px;
+  margin-top: 50px;
 }
 
 .data {
   padding-left: 20px;
   padding-top: 20px;
+  width: 500px;
 }
