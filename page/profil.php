@@ -13,7 +13,7 @@ $user = $stmt->fetch();
 <div class="container">
     <div class="profile-content d-flex">
         <div class="profile-picture">
-            <img src="/img/Screenshot (360).png" width="300px" height="300px" alt="">
+            <img src="<?php echo $user['pp'] ?>" width="300px" height="300px" alt="">
         </div>
         <div class="biodata fs-5">
             <div class="sub">
