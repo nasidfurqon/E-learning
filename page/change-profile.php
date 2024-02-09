@@ -1,3 +1,11 @@
+<?php
+$conn = connect();
+$stmt = $conn->prepare("SELECT * FROM user WHERE id = ?");
+$stmt->execute([$id]);
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+$user = $stmt->fetch();
+?>
+
 <div class="head border-dark fs-4 border-bottom">
     <p >Change  Profile</p>
 </div>
