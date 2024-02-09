@@ -14,19 +14,19 @@ $user = $stmt->fetch();
     <form action="/index.php?page=change-profile&userId=<?php $id ?>"  enctype="multipart/form-data" method="post">
         <div class="name form-content">
             <label for="username" class="mb-2">Name :</label>
-            <input class="fill-form d-block rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="username" placeholder="name">
+            <input class="fill-form d-block rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="username" placeholder="<?php echo $user['name'] ?>">
         </div>
         <div class="email form-content">
             <label for="email"  class="mb-2">Email :</label>
-            <input class="d-block fill-form rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="email" placeholder="email">
+            <input class="d-block fill-form rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="email" placeholder="<?php echo $user['email'] ?>">
         </div>
         <div class="password form-content">
             <label for="pass" class="mb-2">Password :</label>
-            <input class="d-block fill-form rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="pass" placeholder="password">
+            <input class="d-block fill-form rounded-start rounded-end border p-2 border-success-subtle" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required name="pass" placeholder="password">
         </div>
         <div class="address form-content">
             <label for="username" class="mb-2">Address :</label>
-            <input class="d-block fill-form rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="address" placeholder="address">
+            <input class="d-block fill-form rounded-start rounded-end border p-2 border-success-subtle"  type="text" name="address" placeholder="<?php echo $user['address'] ?> ">
         </div>
         <input type="button" class="btn btn-primary" value="change">
     </form>
