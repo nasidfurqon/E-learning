@@ -249,3 +249,18 @@ input[type="file"] {
 .alert {
   margin-top: 50px !important;
 }
+
+.form-wrap {
+  margin-top: 5rem;
+  width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-content {
+  margin-bottom: 20px !important;
+}
+
+.fill-form {
+  width: 100%;
+}

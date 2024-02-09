@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="/style/login.css">
 </head>
-<div class="container-fluid">
+<div class="container-fluid">   
     <!-- PHP CONNECTION TO DATABASE -->
     <?php
     include_once "../connection.php";
